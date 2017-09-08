@@ -34,7 +34,7 @@ public class Movie implements Serializable {
 		}
 	}
 
-	private void setUuid(UUID uuid) {
+	public void setUuid(UUID uuid) {
 		this.uuid = uuid;
 	}
 
@@ -86,8 +86,7 @@ public class Movie implements Serializable {
 		this.release = release;
 	}
 
-	@JsonIgnore
-	private UUID getUuid() {
+	public UUID getUuid() {
 		return uuid;
 	}
 

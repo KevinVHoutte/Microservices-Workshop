@@ -9,7 +9,7 @@ public class RentalInputResource {
 	private String name;
 	private LocalDate rentDate;
 	private LocalDate endDate;
-	private List<String> movies;
+	private String[] movies;
 
 	public String getName() {
 		return name;
@@ -35,11 +35,11 @@ public class RentalInputResource {
 		this.endDate = endDate;
 	}
 
-	public List<String> getMovies() {
+	public String[] getMovies() {
 		return movies;
 	}
 
-	public void setMovies(List<String> movies) {
+	public void setMovies(String[] movies) {
 		this.movies = movies;
 	}
 }

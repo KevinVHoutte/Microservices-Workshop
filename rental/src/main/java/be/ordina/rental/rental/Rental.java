@@ -35,8 +35,7 @@ public class Rental implements Serializable {
 		}
 	}
 
-	@JsonIgnore
-	private UUID getUuid() {
+	public UUID getUuid() {
 		return uuid;
 	}
 
