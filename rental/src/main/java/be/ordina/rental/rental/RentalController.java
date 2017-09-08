@@ -21,7 +21,7 @@ import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.ok;
 
-@RestController
+@RepositoryRestController
 @RequestMapping("/rentals")
 public class RentalController {
 

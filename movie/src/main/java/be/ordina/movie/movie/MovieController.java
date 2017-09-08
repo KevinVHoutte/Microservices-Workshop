@@ -15,7 +15,7 @@ import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.ok;
 
-@RestController
+@RepositoryRestController
 @RequestMapping("/movies")
 public class MovieController {
 
