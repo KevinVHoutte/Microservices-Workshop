@@ -21,7 +21,7 @@ If you defined your domain, extract it from the monolith and create a new projec
 * Go to [Spring Initializr](https://start.spring.io/)
 * Name it to your domain name
 * Generate the project and unzip
-* Copy the downloaded folder & paste it in our project besides the monolith project
+* Copy the unzipped folder & paste it in our project besides the monolith project
 
 ### End Result
 Now you should have three project folder structure: monolith, rental and movie
