@@ -3,7 +3,7 @@ To understand what microservices are, we will start from a more comfortable proj
 The process of transforming is a form of application modernization. Developers have been doing it for decades and as a result,
 there are some ideas that we can reuse when refactoring a monolith into microservices.
 
-## Strategy 1: Domain modeling
+## Strategy 1: Defining the microservices
 When Identifying the scope of our microservices, we look at the functionality a service needs to provide. 
 Domain modeling is a core principle of designing loosely coupled microservices.
 The goal is to ensure that each of your microservice is isolated from runtime side effects and insulated from changes in the implementation of another microservice in the system.
@@ -15,14 +15,21 @@ Here are three questions that can help you with this exercise:
 * Does one service changes data more often than another? 
 
 ### Exercise
-Research and define the bounded context inside this project and write down why you would split it into different services.
-When defined, check with your coach before you continue.
-Now that we defined our bounded context, we can create for each bounded context a Spring Boot project.
+Research and define the bounded context inside this project.
+If you defined your domain, extract it from the monolith and create a new project with the help of these steps
 
 * Go to [Spring Initializr](https://start.spring.io/)
-* You can reference to the dependencies of this project for adding it to the new Spring Boot project.
+* Name it to your domain name
 * Generate the project and unzip
-* Place the folder in your local git folder and open with Intellij
+* Copy the downloaded folder & paste it in our project besides the monolith project
+
+### End Result
+Now you should have three project folder structure: monolith, rental and movie
+|Workshop-microservices
+|
+|-monolith
+|-rental
+|-movie
 
 ## Strategy 2: Each service has its own database
 To have your own database for each service enables developers to use the type of database that is best suited for the service's needs. 
