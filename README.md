@@ -6,22 +6,55 @@ Eureka as a service is comparable to a phone book for your microservices.
 Each service registers itself with the service registry and tells the registry where it lives.
 
 ## Exercise
-* Go to [Spring Initializr](https://start.spring.io/)
-* Name the project eureka.
-* Add the Eureka Server dependency.
-* Generate, unzip and add it to your local git folder.
-* Change your properties file to a yml file.
-* Configure the Eureka Server
-* Link the two microservices to the Eureka server by making them a Eureka Client. 
-* Have a different port when running.
-* Run the three applications.
 
-### [Documentation](http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.3.4.RELEASE/)
+### [Documentation Eureka](http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.3.4.RELEASE/)
+ 
+### Eureka Server
+Go to [Spring Initializr](https://start.spring.io/), here you will see a project initialization structure. 
+Name the project and search & add the Eureka Server dependency.  
+* Generate, unzip and add it to your local git folder.
+* Open existing eureka server project. 
+* Annotate primary class
+* Change your application.properties to application.yml.
+
+#### application.yml
+* Name your application
+* Configure the eureka server uri
+* Tell eureka to not register and fetch itself from the server. 
+* Have a different port when running.
+
+### Microservice Rental & Movie aka Eureka Clients
+* Add following dependencies 
+
+``` maven
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+```
+Since we started working with Cloud components, we will be needing a BOM to manage our versions for us. 
+And add the following:
+
+``` maven
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+```
+* Annotate the primary class
+* Configure the location of the eureka server in your application.yml
 
 If you found the solution, the logs will tell you that they register themselves with Eureka.
 
 ## End result
-* Go to the Eureka application: localhost:<port> 
+* Go to the Eureka application: localhost:port eureka 
 * You should now see an UI Eureka dashboard with both the microservices registered.
 
 
