@@ -50,6 +50,7 @@ And add the following:
 ```
 * Annotate the primary class
 * Configure the location of the eureka server in your application.yml
+* Put register and fetch of the eureka server on true
 
 If you found the solution, the logs will tell you that they register themselves with Eureka.
 
